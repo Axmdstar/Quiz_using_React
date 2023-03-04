@@ -93,17 +93,17 @@ function App() {
           <div className="select">
             <select name="option" id="ctgy">
                 <option value="9">General Knowledge</option>
-                <option value="18">Science: Computers</option>
+                <option value="18">Computer Science</option>
                 <option value="17">Science & Nature</option>
-                <option value="19">Science: Mathematics</option>
+                <option value="19">Mathematics</option>
+                <option value="30">Gadgets</option>
                 <option value="20">Mythology</option>
                 <option value="21">Sports</option>
                 <option value="22">Geography</option>
                 <option value="23">History</option>
+                <option value="27">Animals</option>
                 <option value="24">Politics</option>
                 <option value="25">Art</option>
-                <option value="27">Animals</option>
-                <option value="30">Science: Gadgets</option>
             </select>
           </div>
         </div>
