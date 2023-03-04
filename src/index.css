@@ -11,7 +11,6 @@
   --ansbgclr: #4ea8de;
 }
 
-
 body {
   margin: 0;
   background-color: var(--backGround);
@@ -42,10 +41,96 @@ p {
   transition: all 100ms ease-in-out;
 }
 
-.icon:hover {
+.icon:hover,
+.icon:focus {
   color: var(--btn);
   transform: scale(2,2);
 }
+
+.OptionBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.OptionBox p {
+  color: var(--title);
+}
+
+.category {
+  display: inline-flex;
+  justify-content: space-evenly;
+  gap: 5px;
+  /* align-items: center; */
+}
+
+.diffculty{
+  display: inline-flex;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+:root {
+  --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+  --gray: #34495e;
+  --darkgray: #2c3e50;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  /* Personalize */
+  flex: 1;
+  padding: 5px 1em;
+  color: #fff;
+  border: solid var(--title) 1px;
+  border-radius: 30px;
+
+  background-color: var(--backGround);
+  /* #1d014c */
+  background-image: none;
+  cursor: pointer;
+}
+
+option {
+  padding: 5px 0;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 12em;
+  height: 3em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  color: white;
+  top: 5px;
+  right: 0;
+  padding: 10px;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after,
+.select:focus::after {
+  color: var(--title);
+}
+
+
+
+
+/*! ____________________________________________________________________________________________ */
 
 /*! mainQuiz */
 .mainQuiz {
@@ -104,7 +189,6 @@ p {
 }
 
 .start:hover, .start:focus {
-  transition: top, bottom, left, right, 100ms ease-in-out;
   background-color: var(--title);
   color: black;
 }
@@ -148,7 +232,7 @@ p {
   transition: all 100ms ease-in-out;
 }
 
-.Next:hover {
+.Next:hover,.Next:focus {
   background-color: #80ffdb;
   background-color: var(--title);
   color: #001219;
@@ -180,7 +264,7 @@ p {
   transition: all 100ms ease-in-out;
 }
 .bool:hover::after,
-.bool:hover::after{
+.bool:focus::after{
   top: 7px;
 }
 .bool:hover,.bool:focus{
@@ -222,7 +306,8 @@ p {
   background-color: var(--btnborder);
 }
 
-.ansbtn.idle:hover {
+.ansbtn.idle:hover,
+.ansbtn.idle:focus {
   color: #001219;
   font-weight: 600;
   transform: translateY(-2px);
@@ -295,7 +380,8 @@ p {
   --bordersize: 2px;
   transition: all 100ms ease-in-out;
 }
-.resetbtn:hover {
+.resetbtn:hover,
+.resetbtn:focus {
   box-shadow: 0 0 10px var(--title);
   color: #001219;
   background-color: var(--title);
@@ -309,12 +395,28 @@ p {
   transition: all 200ms ease-in-out;
 
 }
-.resetbtn:hover::after{
+.resetbtn:hover::after,
+.resetbtn:focus::after{
   transform: rotate(260deg);
 }
 /*! ________________________________________________________________________________________ */
 
 @media only screen and (max-width: 768px) {
+
+  .OptionBox {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .select {
+    position: relative;
+    display: flex;
+    width: 10em;
+    height: 3em;
+    overflow: hidden;
+  }
+  
   .AnswersBox {
     display: grid;
     grid-template-columns: 150px 150px;
@@ -346,7 +448,7 @@ p {
   }
 
   .start {
-    width: 200px;
+    width: 250px;
   }
 
   .resetbtn {
