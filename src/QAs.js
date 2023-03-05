@@ -5,8 +5,29 @@ import he from 'he';
 
 //! Question component
 function QusetionBox({ Que }) {
+
+    useEffect(() => {
+        const handleexit = (e) => {
+            e.preventDefault();
+            
+            if (document.visibilityState !== "visible") {
+                console.log("user left");
+                alert("Where did you GO! ");
+            }
+            
+          }
+          
+          document.addEventListener("visibilitychange", handleexit)
+          window.addEventListener('beforeunload', (event) => {
+            event.preventDefault();
+            event.returnValue = '';
+          });
+          
+    }, []); 
+
+
     return (
-        <div className='Question'>
+        <div className='Question' id='question'>
             <p>{ Que && he.decode(Que) }</p>
         </div>
     );
