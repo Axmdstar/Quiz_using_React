@@ -1,3 +1,4 @@
+import './index.css';
 import { useState, useEffect } from "react";
 import QuizBrain from './QuizBrain';
 import { FaYoutube, FaGithub, FaInstagram } from 'react-icons/fa';

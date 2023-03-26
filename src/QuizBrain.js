@@ -56,7 +56,7 @@ const QuizBrain = ({ Ques,ResetBtn }) => {
         return Answers;
     }
 
-    function updataScore(btnValue, value) {
+    function updataScore(btnValue) {
         if (btnValue) {
             setScorelist(Scorelist => [...Scorelist, "True"]);
             setScorePp(ScorePp => [...ScorePp, {index:Currentindex , usrAns:Ques[Currentindex].correct_answer, checked:"🤩"}])

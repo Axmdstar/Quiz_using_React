@@ -1,7 +1,12 @@
 import { useState, useContext, useEffect } from 'react';
 import { QuizContext } from './QuizContext';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 import he from 'he';
 
+
+const hapticsVibrate = async () => {
+    await Haptics.vibrate();
+  };
 
 //! Question component
 function QusetionBox({ Que }) {
@@ -86,6 +91,7 @@ function BooleanBox({ Answers, updataScore }) {
             setboolstate('wrong');
             updataScore(false,value);
         }
+        hapticsVibrate();
     }
     return (
         <div className='TrueBox'>
@@ -118,6 +124,7 @@ function Ansbtn({ children, btnfun, btnstate }) {
         else {
             setonestate('wrong');
         }
+        hapticsVibrate();
       }
 
     if (onestate === "correct") {
