@@ -35,15 +35,12 @@ const Results = ({ resultlist, Questions, ResetBtn }) => {
 }
 
 
-
-const QuizBrain = ({ Ques,ResetBtn }) => {
+const QuizBrain = ({ Ques, ResetBtn }) => {
     //! states 
     const [Currentindex, setCurrenntindex] = useState(0);
     const [btnstate, setbtnstate] = useState('idle');
-    const [Scorelist, setScorelist] = useState([]);
     const [ScorePp, setScorePp] = useState([]);
     const [Q_A, setQ_A] = useState({ Question: null, Ans: null });
-
 
     //! functions 
     function shuffle(Answers) {
@@ -56,16 +53,12 @@ const QuizBrain = ({ Ques,ResetBtn }) => {
         return Answers;
     }
 
-    function updataScore(btnValue, value) {
+    function updataScore(btnValue) {
         if (btnValue) {
-            setScorelist(Scorelist => [...Scorelist, "True"]);
             setScorePp(ScorePp => [...ScorePp, {index:Currentindex , usrAns:Ques[Currentindex].correct_answer, checked:"🤩"}])
-
         }
         else {
-            setScorelist(Scorelist => [...Scorelist, "False"]);
             setScorePp(ScorePp => [...ScorePp, {index:Currentindex , usrAns:Ques[Currentindex].correct_answer, checked:"❌"}])
-
         }
     }
 
@@ -80,7 +73,6 @@ const QuizBrain = ({ Ques,ResetBtn }) => {
     useEffect(() => {
         if (Ques) {
             setbtnstate('idle')
-
             if (Ques[Currentindex].type === "boolean") {
                 setQ_A({
                     Question: Ques[Currentindex].question,
@@ -95,6 +87,7 @@ const QuizBrain = ({ Ques,ResetBtn }) => {
                     Ans: { allAns: shuffle(newarr), corectAns: Ques[Currentindex].correct_answer }
                 });
             }
+            console.log('Q_A', Q_A)
         }
     }, [Currentindex]);
 
@@ -108,9 +101,7 @@ const QuizBrain = ({ Ques,ResetBtn }) => {
             <div className="QuizBrain">
                 {Currentindex === 9
                     ?(
-
                         <Results resultlist={ScorePp} Questions={Ques} ResetBtn={ResetBtn} />
-
                     ):(
                         <QuizContext.Provider value={{ btnstate, setbtnstate, Currentindex }} >
                             <QusetionBox Que={ Q_A.Question } />
@@ -119,12 +110,10 @@ const QuizBrain = ({ Ques,ResetBtn }) => {
                                 <MultipleBox Answers={Q_A.Ans} updataScore={updataScore} />}
                             <button type="button" className="Next" onClick={Next}>Next</button>
                         </QuizContext.Provider>
-
                     )}
             </div>
         );
     }
 }
-
 
 export default QuizBrain;

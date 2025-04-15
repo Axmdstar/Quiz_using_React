@@ -9,7 +9,7 @@ function App() {
   const [QuesJson, setQuesJson] = useState(null);
   const [starttext, setstarttext] = useState("START");
   const [title, settitle] = useState("Quiz");
-  const [reset, setreset] = useState(false);
+  // const [_, setreset] = useState(false);
 
   function selectinputs() {
     setstartbtn(!startbtn);
@@ -19,7 +19,7 @@ function App() {
   function ResetBtn() {
     setstartbtn(false);
     setQuesJson(null);
-    setreset(false);
+    // setreset(false);
     setstarttext("START");
   };
 
@@ -29,8 +29,9 @@ function App() {
     // our go api will use google ai to translate it to somali
     // our go api should follow the structure of the old api
     // TODO: update dblink
-    let dblink = 'https://opentdb.com/api.php?amount=10'
-
+    let SomEnglink = 'http://localhost:8000/getquiz?'
+    let dblink = SomEnglink 
+// 'https://opentdb.com/api.php?amount=10'
     if (startbtn) {
 
       const catagory = document.getElementById("ctgy");
@@ -38,6 +39,7 @@ function App() {
 
       dblink += `&category=${catagory.value}`;
       dblink += `&difficulty=${diffculty.value}`;
+      console.log('dblink', dblink)
 
       fetch(dblink)
         .then((result) => {
@@ -45,9 +47,11 @@ function App() {
           return result.json();
         })
         .then((result) => {
-          setQuesJson(result.results);
+          console.log('results 2', result)
+          setQuesJson(result);
         })
-        .catch((error) => {
+        .catch((err) => {
+          console.log('err', err)
           setstarttext("Retry")
           settitle("Error")
         })
