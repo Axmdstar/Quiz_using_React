@@ -1,0 +1,150 @@
+[
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Geography",
+        "question": {
+            "som": "What is the name of the former country that was succeeded by countries such as Serbia, Croatia and Slovenia?",
+            "eng": "Waa maxay magaca dalkii hore ee ay ka soo farcameen dalal ay ka mid yihiin Serbia, Croatia iyo Slovenia?"
+        },
+        "correct_answer": "Yugoslavia",
+        "incorrect_answers": [
+            "Czechoslovakia",
+            "Abkhazia",
+            "South Ossetia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Film",
+        "question": {
+            "som": "In the 2010 Nightmare on Elm Street reboot, who played Freddy Kruger?",
+            "eng": "Filimkii 2010 ee Nightmare on Elm Street, yaa jilay Freddy Kruger?"
+        },
+        "correct_answer": "Jackie Earle Haley",
+        "incorrect_answers": [
+            "Tyler Mane",
+            "Derek Mears",
+            "Gunnar Hansen"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Video Games",
+        "question": {
+            "som": "Which Final Fantasy game consisted of a female-only cast of party members?",
+            "eng": "Kee ciyaarood ee Final Fantasy ayaa ka koobnaa koox dumar kaliya ah?"
+        },
+        "correct_answer": "Final Fantasy X-2",
+        "incorrect_answers": [
+            "Final Fantasy IX",
+            "Final Fantasy V",
+            "Final Fantasy XIII-2"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "History",
+        "question": {
+            "som": "In 1939, Britain and France declared war on Germany after it invaded which country?",
+            "eng": "Sannadkii 1939, Britain iyo France waxay dagaal ku dhawaaqeen Germany ka dib markii ay qabsadeen waddankee?"
+        },
+        "correct_answer": "Poland",
+        "incorrect_answers": [
+            "Czechoslovakia",
+            "Austria",
+            "Hungary"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "History",
+        "question": {
+            "som": "What year did the Battle of Agincourt take place?",
+            "eng": "Sannadkee ay dhacday Dagaalkii Agincourt?"
+        },
+        "correct_answer": "1415",
+        "incorrect_answers": [
+            "1463",
+            "1401",
+            "1422"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Entertainment: Music",
+        "question": {
+            "som": "Which of these songs by artist Eminem contain the lyric \u0026quot;Nice to meet you. Hi, my name is... I forgot my name!\u0026quot;?",
+            "eng": "Heesahaas oo uu qaaday fanaan Eminem kee ku jiray ereyga \u0026quot;Waan ku faraxsanahay kulankaaga. Hi, magacaygu waa... waan hilmaamay magacayga!\u0026quot;?"
+        },
+        "correct_answer": "Rain Man",
+        "incorrect_answers": [
+            "Without Me",
+            "Kim",
+            "Square Dance"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Geography",
+        "question": {
+            "som": "Llanfair\u0026shy;pwllgwyngyll\u0026shy;gogery\u0026shy;chwyrn\u0026shy;drobwll\u0026shy;llan\u0026shy;tysilio\u0026shy;gogo\u0026shy;goch is located on which Welsh island?",
+            "eng": "Llanfair\u0026shy;pwllgwyngyll\u0026shy;gogery\u0026shy;chwyrn\u0026shy;drobwll\u0026shy;llan\u0026shy;tysilio\u0026shy;gogo\u0026shy;goch waxay ku taal jasiiradaha Welsh kee?"
+        },
+        "correct_answer": "Anglesey",
+        "incorrect_answers": [
+            "Barry",
+            "Bardsey",
+            "Caldey"
+        ]
+    },
+    {
+        "type": "boolean",
+        "difficulty": "easy",
+        "category": "Entertainment: Film",
+        "question": {
+            "som": "The movie \u0026quot;The Nightmare before Christmas\u0026quot; was all done with physical objects.",
+            "eng": "Filimka \u0026quot;The Nightmare before Christmas\u0026quot; waxaa lagu sameeyay dhammaan walxo jireed. Run mise Been?"
+        },
+        "correct_answer": "True",
+        "incorrect_answers": [
+            "False"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "General Knowledge",
+        "question": {
+            "som": "What year was Queen Elizabeth II born?",
+            "eng": "Sannadkee ay dhalatay Boqorad Elizabeth II?"
+        },
+        "correct_answer": "1926",
+        "incorrect_answers": [
+            "1923",
+            "1929",
+            "1930"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science: Computers",
+        "question": {
+            "som": "What does GHz stand for?",
+            "eng": "Maxaa loola jeedaa GHz?"
+        },
+        "correct_answer": "Gigahertz",
+        "incorrect_answers": [
+            "Gigahotz",
+            "Gigahetz",
+            "Gigahatz"
+        ]
+    }
+]

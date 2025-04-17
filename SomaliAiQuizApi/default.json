@@ -1,0 +1,66 @@
+{
+  "response_code": 0,
+  "results": [
+    
+    {
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "In 1993, Prince changed his name to an unpronounceable symbol because he was unhappy with his contract with Warner Bros.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "Who voices GLaDOS in the Portal games?",
+      "correct_answer": "Ellen McLain",
+      "incorrect_answers": [
+        "Michelle Forbes ",
+        "Mary Kae Irvin ",
+        "Natasha Radski"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "History",
+      "question": "The Korean War started in what year?",
+      "correct_answer": "1950",
+      "incorrect_answers": [
+        "1945",
+        "1960",
+        "1912"
+      ]
+    },
+    {
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "The proof for the Chinese Remainder Theorem used in Number Theory was NOT developed by its first publisher, Sun Tzu.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Greenland is a part of which kingdom?",
+      "correct_answer": "Denmark",
+      "incorrect_answers": [
+        "Sweden",
+        "Norway",
+        "United Kingdom"
+      ]
+    }
+    
+    
+    
+    
+  ]
+}
