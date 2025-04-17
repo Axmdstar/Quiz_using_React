@@ -40,6 +40,7 @@ func main() {
 
 	// Routes
 	router.HandleFunc("/getquiz", api.GetQuizOptn(ctx, model))
+	router.HandleFunc("/dummy", api.DummyData)
 	router.HandleFunc("/testai", startgemini.GeminiMiddleware())
 
 	// Server Option

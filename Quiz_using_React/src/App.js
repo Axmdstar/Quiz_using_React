@@ -9,7 +9,6 @@ function App() {
   const [QuesJson, setQuesJson] = useState(null);
   const [starttext, setstarttext] = useState("START");
   const [title, settitle] = useState("Quiz");
-  // const [_, setreset] = useState(false);
 
   function selectinputs() {
     setstartbtn(!startbtn);
@@ -19,19 +18,16 @@ function App() {
   function ResetBtn() {
     setstartbtn(false);
     setQuesJson(null);
-    // setreset(false);
     setstarttext("START");
   };
 
   //! Effect Function 
   useEffect(() => {
-    // what we want to do here to use the go api instead
-    // our go api will use google ai to translate it to somali
-    // our go api should follow the structure of the old api
-    // TODO: update dblink
+     
     let SomEnglink = 'http://localhost:8000/getquiz?'
-    let dblink = SomEnglink 
-// 'https://opentdb.com/api.php?amount=10'
+    // 'https://opentdb.com/api.php?amount=10'
+    let DummyData = 'http://localhost:8000/dummy?'
+    let dblink = DummyData  
     if (startbtn) {
 
       const catagory = document.getElementById("ctgy");

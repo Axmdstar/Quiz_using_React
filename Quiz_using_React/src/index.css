@@ -164,6 +164,21 @@ select::-ms-expand {
   text-align: center;
 }
 
+.Chglang {
+  color: #fff;
+  background: rgba(0, 0, 0, 0);
+  padding: 2px 4px;
+  border-style: none;
+  border-radius: 10%;
+  font-weight: 800;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.Chglang:hover {
+  color: var(--btn);
+  transform: scale(1,1);
+}
 
 /*! ________________________________________________________________________________________ */
 

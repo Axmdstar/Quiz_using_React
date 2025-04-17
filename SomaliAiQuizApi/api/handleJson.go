@@ -9,9 +9,12 @@ import (
 func responsewithJSON(w http.ResponseWriter, statuscode int, payload interface{}) {
 	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(statuscode)
-	if err := json.NewEncoder(w).Encode(payload); err != nil {
+
+	jsonData, err := json.Marshal(payload)
+	if err != nil {
 		log.Printf("Failed to Encode json payload : %v \n", err)
 	}
+	w.Write(jsonData)
 }
 
 func responseWithERROR(w http.ResponseWriter, statuscode int, err string) {

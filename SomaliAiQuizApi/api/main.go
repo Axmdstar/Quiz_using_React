@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 
 	"SomaliAiQuizApi/types"
 
@@ -61,6 +62,22 @@ func GetQuizOptn(ctx context.Context, gm *genai.GenerativeModel) http.HandlerFun
 
 		responsewithJSON(w, 200, resQuiz)
 	}
+}
+
+func DummyData(w http.ResponseWriter, r *http.Request) {
+	dummyfile, err := os.Open("data.json")
+	if err != nil {
+		responseWithERROR(w, 404, fmt.Sprint(err))
+	}
+
+	rd, err := io.ReadAll(dummyfile)
+	if err != nil {
+		responseWithERROR(w, 404, fmt.Sprint(err))
+	}
+
+	defer dummyfile.Close()
+	// responsewithJSON(w, 200, rd)
+	w.Write(rd)
 }
 
 func JoinParts(p genai.Content) string {
