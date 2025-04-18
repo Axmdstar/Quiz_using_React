@@ -26,7 +26,7 @@ function App() {
     // local 
     // let SomEnglink = 'http://localhost:8000/getquiz?'
     // Production
-    let SomEnglink = 'https://quiz-using-react.onrender.com?'
+    let SomEnglink = 'https://quiz-using-react.onrender.com/getquiz?'
     // 'https://opentdb.com/api.php?amount=10'
     // let DummyData = 'http://localhost:8000/dummy?'
     let dblink = SomEnglink  
