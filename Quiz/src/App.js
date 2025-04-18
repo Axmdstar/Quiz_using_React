@@ -23,11 +23,13 @@ function App() {
 
   //! Effect Function 
   useEffect(() => {
-     
-    let SomEnglink = 'http://localhost:8000/getquiz?'
+    // local 
+    // let SomEnglink = 'http://localhost:8000/getquiz?'
+    // Production
+    let SomEnglink = 'https://quiz-using-react.onrender.com?'
     // 'https://opentdb.com/api.php?amount=10'
-    let DummyData = 'http://localhost:8000/dummy?'
-    let dblink = DummyData  
+    // let DummyData = 'http://localhost:8000/dummy?'
+    let dblink = SomEnglink  
     if (startbtn) {
 
       const catagory = document.getElementById("ctgy");

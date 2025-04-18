@@ -8,6 +8,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
+	"time"
 
 	"SomaliAiQuizApi/types"
 
@@ -48,7 +50,7 @@ func GetQuizOptn(ctx context.Context, gm *genai.GenerativeModel) http.HandlerFun
 		log.Printf("Parts Joined >> %v ", joinpart)
 		err = json.Unmarshal([]byte(joinpart), generatedQuiz)
 		if err != nil {
-			fmt.Printf("Error >> %v", err)
+			log.Printf("Error: Unmarshal json >> %v", err)
 		}
 		// fmt.Printf("\n >>> %v \n ", generatedQuiz)
 		var resQuiz []*types.ResponseQuiz
@@ -81,11 +83,14 @@ func DummyData(w http.ResponseWriter, r *http.Request) {
 }
 
 func JoinParts(p genai.Content) string {
-	var joinVar string
+	// var joinVar string
+	var strBuild strings.Builder
+
 	for _, parts := range p.Parts {
-		joinVar += fmt.Sprint(parts)
+		// joinVar += fmt.Sprint(parts)
+		strBuild.WriteString(fmt.Sprint(parts))
 	}
-	return fmt.Sprintf(`%v`, joinVar)
+	return strBuild.String()
 }
 
 func GetQuiz(diff string, ctgy string) (*types.Quiz, error) {
@@ -97,8 +102,11 @@ func GetQuiz(diff string, ctgy string) (*types.Quiz, error) {
 		dbQuiz += fmt.Sprintf("&category=%v", ctgy)
 	}
 
+	// added request timeout
+	client := &http.Client{Timeout: 10 * time.Second}
+
 	fmt.Println(dbQuiz)
-	resp, err := http.Get(dbQuiz)
+	resp, err := client.Get(dbQuiz)
 	if err != nil {
 		return nil, err
 	}

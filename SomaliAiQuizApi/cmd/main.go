@@ -13,6 +13,25 @@ import (
 	"google.golang.org/api/option"
 )
 
+func enableCORS(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// Allow all origins (replace * with specific domains in production)
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		// Allowed methods
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+		// Allowed headers
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+		// Handle preflight requests (OPTIONS)
+		if r.Method == "OPTIONS" {
+			w.WriteHeader(http.StatusOK)
+			return
+		}
+
+		next.ServeHTTP(w, r)
+	})
+}
+
 func main() {
 	// Get env File and Variables in it
 	err := godotenv.Load(".env")
@@ -43,10 +62,11 @@ func main() {
 	router.HandleFunc("/dummy", api.DummyData)
 	router.HandleFunc("/testai", startgemini.GeminiMiddleware())
 
+	handler := enableCORS(router)
 	// Server Option
 	srv := http.Server{
 		Addr:    ":" + PORT,
-		Handler: router,
+		Handler: handler,
 	}
 
 	// Start Server
