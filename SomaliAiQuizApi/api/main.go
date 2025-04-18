@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"time"
 
 	"SomaliAiQuizApi/types"
 
@@ -47,7 +46,6 @@ func GetQuizOptn(ctx context.Context, gm *genai.GenerativeModel) http.HandlerFun
 		joinpart := JoinParts(*resp.Candidates[0].Content)
 		generatedQuiz := types.NewQuiz()
 
-		log.Printf("Parts Joined >> %v ", joinpart)
 		err = json.Unmarshal([]byte(joinpart), generatedQuiz)
 		if err != nil {
 			log.Printf("Error: Unmarshal json >> %v", err)
@@ -78,7 +76,6 @@ func DummyData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	defer dummyfile.Close()
-	// responsewithJSON(w, 200, rd)
 	w.Write(rd)
 }
 
@@ -103,10 +100,9 @@ func GetQuiz(diff string, ctgy string) (*types.Quiz, error) {
 	}
 
 	// added request timeout
-	client := &http.Client{Timeout: 10 * time.Second}
+	// client := &http.Client{Timeout: 10 * time.Second}
 
-	fmt.Println(dbQuiz)
-	resp, err := client.Get(dbQuiz)
+	resp, err := http.Get(dbQuiz)
 	if err != nil {
 		return nil, err
 	}
